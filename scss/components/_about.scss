@@ -1,0 +1,74 @@
+@use 'sass:color' as *;
+@use '../util/' as *;
+
+.about {
+  anchor-name: --about;
+  @include df(normal, normal, column, 0);
+  &__content {
+    @include df(normal, normal, column, 20px);
+    padding: 50px var(--side-padding);
+    h2 {
+      font-size: clamp(1.5rem, 5dvw, 2.5rem);
+      color: $bg;
+      font-size: inherit;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      word-spacing: 5px;
+      font-weight: 700;
+    }
+  }
+  @media (min-width: $big-tab) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "img1 img2"
+      "img1 content"
+    ;
+    &__img {
+      &:first-child {
+        grid-area: img1;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &:last-child {
+        grid-area: img2;
+      }
+    }
+    &__content {
+      grid-area: content;
+      padding: 40px var(--side-padding);
+    }
+  }
+  @media (min-width: $desktop) {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-areas: none;
+    grid-template-rows: subgrid;
+    grid-template-columns: subgrid;
+    &__img {
+      &:first-of-type {
+        grid-column: 1/2;
+        grid-row: 2/-1;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &:last-of-type {
+        grid-column: 4/-1;
+        grid-row: 2/-1;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    &__content {
+      grid-column: 2/4;
+      grid-row: 2/-1;
+      padding: 50px;
+    }
+  }
+}

@@ -1,5 +1,106 @@
 @use '../util/' as *;
+@use "sass:color" as c;
 
 .header {
-  padding: 2px var(--side-padding);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 7;
+  padding: 40px var(--side-padding);
+  @include df(space-between, center);
+
+  #nav-checkbox, &__overlay {
+    display: none;
+  }
+  &__overlay {
+    position: fixed;
+    z-index: 9;
+    background: c.adjust($bg, $alpha: -0.5);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  &__logo {
+    width: auto;
+  }
+  &__nav {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $text;
+    transition: all .3s ease-in-out;
+    padding: 40px var(--side-padding);
+    transform: translateY(-100%);
+    @include df(space-between, center);
+    &__list {
+      list-style: none;
+      @include df(right, center, row, clamp(1rem, 3dvw, 2.5rem));
+      &__item {
+        a {
+          text-decoration: none;
+          color: $bg;
+          font-weight: 700;
+          text-transform: lowercase;
+          position: relative;
+          @include df(center, center, column);
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            transform: translateY(10px);
+            height: 3px;
+            width: 2px;
+            opacity: 0;
+            transition: all .3s;
+            background: $bg;
+          }
+          &:hover {
+            &::after {
+              opacity: 1;
+              width: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #nav-checkbox:checked {
+    ~ .header__nav {
+      transform: translateY(0);
+    }
+    ~ .header__overlay {
+      display: block;
+    }
+  }
+  @media (min-width: $tab) {
+    @include df(normal, center, row, 100px);
+    #nav-checkbox, &__overlay, span, &__menu-btn {
+      display: none;
+    }
+    &__nav {
+      position: static;
+      background: transparent;
+      transform: none;
+      padding: 0;
+      @include df(space-between, center);
+      &__close {
+        display: none;
+      }
+      &__list {
+        @include df(right, center, row, clamp(1rem, 3dvw, 2.5rem));
+        &__item {
+          a {
+            color: $text;
+            &::after {
+              background: $text;
+            }
+          }
+        }
+      }
+    }
+  }
 }

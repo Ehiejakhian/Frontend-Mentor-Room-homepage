@@ -2,56 +2,144 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO: primary metadata -->
+  <meta name="description" content="Room homepage — a frontend project by Ehi Ejakhian. Web developer from Ekpoma building accessible, responsive UI and modern web experiences.">
+  <meta name="keywords" content="Ehi, Ejakhian, ehiejakhian, Ehi Ejakhian, web developer, Ekpoma, frontend developer, UI, responsive, room homepage, furniture, interior design">
+  <meta name="author" content="Ehi Ejakhian">
+  <meta name="robots" content="index, follow">
+
+  <!-- Social / Open Graph -->
+  <meta property="og:title" content="Room homepage — Ehi Ejakhian">
+  <meta property="og:description" content="Discover innovative ways to decorate — portfolio project by Ehi Ejakhian, web developer from Ekpoma.">
+  <meta property="og:image" content="./assets/images/desktop-image-hero-1.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ehiejakhian.github.io/">
+  <meta property="og:site_name" content="Ehi Ejakhian — Web Developer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Room homepage — Ehi Ejakhian">
+  <meta name="twitter:description" content="Discover innovative ways to decorate — portfolio project by Ehi Ejakhian, web developer from Ekpoma.">
+  <meta name="twitter:image" content="./assets/images/desktop-image-hero-1.jpg">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"/>
   <link rel="stylesheet" href="./scss/css/main.css"/>
   <title>Frontend Mentor | Room homepage</title>
+
+  <!-- Structured data: Person (for richer search results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ehi Ejakhian",
+    "alternateName": ["Ehi","Ejakhian","ehiejakhian"],
+    "jobTitle": "Web Developer",
+    "url": "https://ehiejakhian.github.io/",
+    "sameAs": [
+        "https://github.com/ehiejakhian",
+        "https://ng.linkedin.com/in/ehi-ejakhian-2302a7318",
+        "https://www.frontendmentor.io/profile/EhiEjakhian",
+        "https://pin.it/6eYrRLUYm",
+        "https://www.upwork.com/freelancers/~01287f253aaa0dc476?mp_source=share",
+        "https://wa.me/+2348142340182",
+        "https://web.facebook.com/profile.php?id=100094574380684",
+        "https://discord.com/users/1427691425058783343"
+      ]
+    }
+  </script>
 </head>
 <body>
-  Home
-  Shop
-  About
-  Contact
+<header class="header">
+  <label for="nav-checkbox" class="header__menu-btn"><img src="./assets/images/icon-hamburger.svg" alt="Menu"></label>
+  <img src="./assets/images/logo.svg" alt="Room logo" class="header__logo"/>
+  <input type="checkbox" name="nav-checkbox" id="nav-checkbox" class="header__checkbox"/>
+  <label class="header__overlay" for="nav-checkbox"></label>
+  <span></span>
+  <nav class="header__nav">
+    <label for="nav-checkbox" class="header__nav__close"><img src="./assets/images/icon-close.svg" alt="Close menu"></label>
+    <ul class="header__nav__list">
+      <li class="header__nav__list__item"><a href="#">Home</a></li>
+      <li class="header__nav__list__item"><a href="#">Shop</a></li>
+      <li class="header__nav__list__item"><a href="#">About</a></li>
+      <li class="header__nav__list__item"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  Discover innovative ways to decorate
+<main>
+  <section class="hero">
+    <div class="hero__img">
+      <img src="./assets/images/desktop-image-hero-1.jpg" alt="hero image" class="desktop"/>
+      <img src="./assets/images/mobile-image-hero-1.jpg" alt="hero image" class="mobile"/>
+    </div>
+    <div class="hero__btns">
+      <button class="left"><img src="./assets/images/icon-angle-left.svg" alt="angle-left"></button>
+      <button class="right"><img src="./assets/images/icon-angle-right.svg" alt="angle-right"></button>
+    </div>
+    <div class="hero__content">
+      <h1>Discover innovative ways to decorate</h1>
+      <p>We provide unmatched quality, comfort, and style for property owners across the country. 
+      Our experts combine form and function in bringing your vision to life. Create a room in your 
+      own style with our collection and make your property a reflection of you and what you love.</p>
+      <button class="btn"><span>Shop now</span><img src="./assets/images/icon-arrow.svg" alt=""></button>
+    </div>
+  </section>
 
-  We provide unmatched quality, comfort, and style for property owners across the country. 
-  Our experts combine form and function in bringing your vision to life. Create a room in your 
-  own style with our collection and make your property a reflection of you and what you love.
-
-  Shop now
-
-  We are available all across the globe
-
-  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
-  Locally, we’re in most major cities throughout the country. Find the branch nearest you using our 
-  store locator. Any questions? Don't hesitate to contact us today.
-
-  Shop now
-
-  Manufactured with the best materials
-
-  Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
-  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
-  experience in this industry, we understand what customers want for their home and office.
-
-  Shop now
-
-  About our furniture
-
-  Our multifunctional collection blends design and function to suit your individual taste.
-  Make each room unique, or pick a cohesive theme that best express your interests and what
-  inspires you. Find the furniture pieces you need, from traditional to contemporary styles
-  or anything in between. Product specialists are available to help you create your dream space.
+  <section class="about">
+    <div class="about__img">
+      <img src="./assets/images/image-about-dark.jpg" alt="about image"/>
+    </div>
+    <div class="about__content">
+      <h2>About our furniture</h2>
+      <p>
+        Our multifunctional collection blends design and function to suit your individual taste.
+        Make each room unique, or pick a cohesive theme that best express your interests and what
+        inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+        or anything in between. Product specialists are available to help you create your dream space.
+      </p>
+    </div>
+    <div class="about__img">
+      <img src="./assets/images/image-about-light.jpg" alt="about image"/>
+    </div>
+  </section>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://ehiejakhian.github.io/">Ehi Ejakhian</a>.
   </div>
+</main>
 
-  <script>
-    console.log(window.innerHeight);
-    console.log(window.innerWidth);
+  <script type="module">
+    const services = [
+      {
+        img: [
+          "./assets/images/desktop-image-hero-1.jpg",
+          "./assets/images/mobile-image-hero-1.jpg"
+        ],
+        heading: "Discover innovative ways to decorate",
+        content: "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love."
+      },
+      {
+        img: [
+          "./assets/images/desktop-image-hero-2.jpg",
+          "./assets/images/mobile-image-hero-2.jpg"
+        ],
+        heading: "We are available all across the globe",
+        content: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we’re in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today."
+      },
+      {
+        img: [
+          "./assets/images/desktop-image-hero-3.jpg",
+          "./assets/images/mobile-image-hero-3.jpg"
+        ],
+        heading: "Manufactured with the best materials",
+        content: "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office."
+      }
+    ];
+
+    let currentSlide = 0;
   </script>
 </body>
 </html>

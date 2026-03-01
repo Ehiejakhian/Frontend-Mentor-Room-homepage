@@ -1,13 +1,16 @@
+@use "sass:color";
 
 $mini-tab: 500px;
-$desktop: 1100px;
+$tab: 700px;
+$big-tab: 1000px;
+$desktop: 1200px;
 
+$text: #fff;
+$bg: #000;
+$grey-500: hsl(0, 0%, 63%);
+$grey-800: hsl(0, 0%, 27%);
 :root {
   scroll-behavior: smooth;
 
-  --text: #fff;
-  --bg: #000;
-  --grey-500: hsl(0, 0%, 63%);
-  --grey-800: hsl(0, 0%, 27%);
   --side-padding: clamp(20px, 5dvw, 10%);
 }

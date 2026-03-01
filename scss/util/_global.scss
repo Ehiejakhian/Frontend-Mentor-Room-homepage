@@ -6,3 +6,37 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'league-spartan';
+}
+
+main {
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-columns: 30% 30% 10% 30%;
+    grid-template-rows: 67vh 33vh;
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+  &.desktop {
+    display: none;
+  }
+  @media (min-width: $mini-tab) {
+    &.desktop {
+      display: block;
+    }
+    &.mobile {
+      display: none;
+    }
+  }
+}
+
+p {
+  color: $grey-500;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+}

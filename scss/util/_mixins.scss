@@ -4,5 +4,6 @@
   display: flex;
   justify-content: $j;
   align-items: $a;
+  flex-flow: $fl;
   gap: $g;
 }
