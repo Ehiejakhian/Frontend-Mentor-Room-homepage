@@ -1,0 +1,8 @@
+@use './vars' as *;
+
+@include df($j:normal, $a:normal, $fl:row, $g:0) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  gap: $g;
+}
