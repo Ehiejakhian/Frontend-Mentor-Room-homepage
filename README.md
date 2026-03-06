@@ -13,7 +13,6 @@ Hi! I'm Ehi. This is my solution to the [Room homepage challenge on Frontend Men
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -76,20 +75,51 @@ CSS **anchor positioning** is probaply one of the best things that ever happened
   }
 }
 ```
-Yes. Just like that.
 
-<!--
+I also learnt something else - Event delegation in Javascript. See what I mean;
+
+Instead of:
+```js
+let btn_left = document.querySelector('.left');
+let btn_right = document.querySelector('.right');
+
+const buttons = [btn_left, btn_right];
+buttons.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    console.log('clicked')
+    let arr = Array.from(btn.classList)
+    console.log(arr)
+    if (arr.includes('left')) {
+      (currentSlide <= 1) ? currentSlide = 1 : currentSlide--;
+    }else if (arr.includes('right')) {
+      (currentSlide >= 3) ? currentSlide = 3 : currentSlide++;
+    }
+    domTime(currentSlide);
+  })
+})
+```
+We use:
+```js
+let hero_section = document.querySelector('.hero');
+hero_section.addEventListener('click', (e) => {
+  if (e.target.closest('.left')) {
+    console.log('left clicked');
+    (currentSlide <= 1) ? currentSlide = 1 : currentSlide--;
+    domTime(currentSlide);
+  } else if (e.target.closest('.right')) {
+    console.log('right clicked');
+    (currentSlide >= 3) ? currentSlide = 3 : currentSlide++;
+    domTime(currentSlide);
+  }
+});
+```
+This is great especially when replacing and restructuring elements in the dom that have event listeners attached to them.
+
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Truth is, I know I could have made this solution a whole lot better than this, but I didn't. I could have preloaded images in Javascript for zero lag on a page refresh, I could have made all this with CSS only but I didn't. I have been a lazy coder for some months now, and I want to get serious little by little. Anyway, tell me what you think [**here**](https://wa.me/+2348142340182?text=Hello%20Ehi%20.%20I%20checked%20your%20website.%20).
 
 
-### Useful resources
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
--->
 
 ## Author
 
